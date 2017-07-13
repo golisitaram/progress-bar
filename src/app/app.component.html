@@ -2,21 +2,26 @@
   <div class="col-xs-12">
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 barContainer">
       <div class="col-xs-12 noPad">
-        <h3>Dynamic Progress bar</h3>
-        <button class="btn btn-info pull-right" (click) = "getDynamicData()">Generate Data</button>
+        <h3 class="col-xs-12 col-sm-7 noPad">Dynamic Progress bar</h3>
+        <button class="dataBtn btn btn-info pull-right col-xs-12 col-sm-5" (click) = "getDynamicData()">Generate Data</button>
       </div>
       <hr/>
-      <div class="col-xs-12 noPad">
+      <div class="col-xs-12 noPad barHolder">
         <app-bars [progressbar] = 'data.bars' [limit] = 'data.limit'></app-bars>
       </div>
-      <div class="col-xs-4 noPad">
-        <select class="form-control" [(ngModel)] = "selectedOpt">
-          <option *ngFor="let opt of data.bars;let i = index" [value]="i">Progress{{i+1}}</option>
-        </select>
+      <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <select class="form-control" [(ngModel)] = "selectedOpt">
+            <option *ngFor="let opt of data.bars;let i = index" [value]="i">Progress{{i+1}}</option>
+          </select>
+        </div>
+        
+        <div class="col-xs-12 col-sm-8 col-md-8 actBtn noPad">
+          <button class="btn btn-primary" *ngFor="let btn of data.buttons" (click)=updateProgress(btn)>{{btn}}</button>
+        </div>
       </div>
-      <div class="col-xs-8">
-        <button class="btn btn-primary" *ngFor="let btn of data.buttons" (click)=updateProgress(btn)>{{btn}}</button>
-        Limit : {{data.limit}}
+      <div class="col-md-12 limitHolder">
+        <h4 class="col-xs-12 text-center">Limit : {{data.limit}}</h4>
       </div>
     </div>
   </div>
