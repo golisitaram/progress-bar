@@ -1,0 +1,11 @@
+.progressPerc{
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+    left: 0;
+    text-align: center;
+    line-height: 30px;
+}
+.progress{
+    height: 35px;
+}
