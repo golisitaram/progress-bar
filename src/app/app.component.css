@@ -8,9 +8,28 @@
     padding-left: 0;
     padding-right: 0;
 }
-button{
-    margin-right: 10px;
+.dataBtn{
+    margin-top: 15px;
 }
 h3{
     display: inline-block
+}
+.barHolder{
+    margin-top: 30px;
+}
+.actBtn button{
+    margin-right: 10px;
+    width: 21%;
+}
+.limitHolder h4{
+    border-top: 2px dashed #ccc;
+    margin-top: 10px;
+    padding: 10px;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .actBtn button{
+        margin-top: 20px;
+        width: 22%;
+    }
 }
